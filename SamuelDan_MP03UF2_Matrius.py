@@ -33,8 +33,8 @@ def cercar_els_que_acaben_en(m,e):
     return n_ultim
 
 # Ex7
-def crear_quadrat(s):
-    quadrat = [["*" for j in range(s)] for i in range(s)]
+def crear_quadrat(s,c):
+    quadrat = [[c for j in range(s)] for i in range(s)]
     return quadrat
 
 # Funció principal
@@ -54,6 +54,9 @@ def main():
 
     e = utils.secure_int("Introdueix un nombre (0-9): ", 0, 9)
     print(cercar_els_que_acaben_en(m,e))
+    
+    s = utils.secure_int("Introdueix un nombre (10-20): ", 10, 20)
+    print(crear_quadrat(s,"*"))
     
 if __name__ == "__main__":
     main()
