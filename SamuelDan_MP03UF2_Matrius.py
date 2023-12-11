@@ -36,8 +36,6 @@ def crear_quadrat(s,c):
     quadrat = [[c for j in range(s)] for i in range(s)]
     return quadrat
 
-
-
 # Ex8
 def inicialitzar_matriu(q,c):
     matriu = [[c for j in i] for i in q]
