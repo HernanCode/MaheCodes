@@ -27,20 +27,33 @@ def buscar_min_i_max(m):
     m1d = [num for row in m for num in row]
     return(min(m1d),max(m1d))
 
+# Ex6
+def cercar_els_que_acaben_en(m,e):
+    n_ultim = [num for row in m for num in row if str(num)[-1] == str(e)]
+    return n_ultim
+
+# Ex7
+def crear_quadrat(s):
+    quadrat = [["*" for j in range(s)] for i in range(s)]
+    return quadrat
+
 # Funció principal
 def main():
-    n1 = int(input("Introdueix el primer nombre: "))
-    n2 = int(input("Introdueix el segon nombre: "))
+    n1 = utils.secure_int("Introdueix el primer nombre: ")
+    n2 = utils.secure_int("Introdueix el segon nombre: ")
     m = crear_matriu_2d(n1, n2)
     
-    print(print_matrix(m))
+    print_matrix(m)
     
+    n = utils.secure_int("Introdueix un nombre (1-10): ", 1, 10)
     print(llistar_multiples(m,n))
     
     print(fer_llista_unica(m))
     
     print(buscar_min_i_max(m))
-    
+
+    e = utils.secure_int("Introdueix un nombre (0-9): ", 0, 9)
+    print(cercar_els_que_acaben_en(m,e))
     
 if __name__ == "__main__":
     main()
