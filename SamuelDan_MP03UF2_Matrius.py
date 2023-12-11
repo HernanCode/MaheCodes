@@ -6,35 +6,44 @@ def crear_matriu_2d(n1, n2):
     m = [[random.randint(1, 100) for i in range(n2)] for i in range(n1)]
     return m
 
+
 # Ex2
 def imprimir_matriu(m):
+    max_width = max(len(str(num)) for row in m for num in row)
+    
     for row in m:
-        print(*row)
+        print(" ".join(f"{num:>{max_width}}" for num in row))
+
 
 # Ex3
 def llistar_multiples(m,n):
     multiples = [num for row in m for num in row if num % n == 0]
     return multiples
 
+
 # Ex4
 def fer_llista_unica(m):
     m_unica = list(set([num for row in m for num in row]))
     return m_unica
+
 
 # Ex5
 def buscar_min_i_max(m):
     m1d = [num for row in m for num in row]
     return(min(m1d),max(m1d))
 
+
 # Ex6
 def cercar_els_que_acaben_en(m,e):
     n_ultim = [num for row in m for num in row if str(num)[-1] == str(e)]
     return n_ultim
 
+
 # Ex7
 def crear_quadrat(s,c):
     quadrat = [[c for j in range(s)] for i in range(s)]
     return quadrat
+
 
 # Ex8
 def inicialitzar_matriu(q,c):
@@ -42,15 +51,26 @@ def inicialitzar_matriu(q,c):
     for row in matriu:
         print(*row)
 
+
 def diagonal(q,c):
     for i in range(len(q)):
         q[i][i] = c
     return q
 
+
 # Ex9
-def posar_en_diagonal(q, c):
+def posar_en_diagonal(q,c):
     diagonal(q,c)
     diagonal(q[::-1],c)
+    return q
+
+
+# Ex10
+def dibuixar_creu(q,c):
+    mid = len(q) // 2 
+    for i in range(len(q)):
+        q[i][mid] = c  
+        q[mid][i] = c  
     return q
 
 
@@ -81,6 +101,8 @@ def main():
     q = crear_quadrat(19,"-")
     diagonal = posar_en_diagonal(q,"*")
     imprimir_matriu(diagonal)
+    
+    imprimir_matriu(dibuixar_creu(diagonal,"|"))
     
 if __name__ == "__main__":
     main()
