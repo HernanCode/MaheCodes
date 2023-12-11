@@ -4,18 +4,6 @@
 
 import random
 
-menu = ("Matriu 2D", "Anys 2000", "Gira del revés", "Llista unica",)
-
-# Creem una funció per mostrar el menú
-def print_menu(menu):
-    '''Mostra les entrades de la tupla "menu" afegint el nombre
-    corresponent i la entrada "SORTIR" al final.'''
-    mida = len(menu)
-    print("\nFuncions\n--------------------")
-    for i in range(len(menu)):
-        print(f"{i+1}. {menu[i]}")
-    print(f"{mida+1}. SORTIR")
-
 # Funció de multiplicació
 def crear_matriu_2d(n1,n2):
     '''Imprimeix el resultat de multiplicar dos números passats 
