@@ -1,5 +1,6 @@
 import random
 import utils
+import os
 
 # Ex1
 def crear_matriu_2d(n1, n2):
@@ -14,7 +15,6 @@ def imprimir_matriu(m):
     for row in m:
         print(" ".join(f"{num:>{max_width}}" for num in row))
 
-dasdasda
 # Ex3
 def llistar_multiples(m,n):
     multiples = [num for row in m for num in row if num % n == 0]
