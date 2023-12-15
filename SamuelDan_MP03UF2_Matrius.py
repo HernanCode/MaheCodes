@@ -108,7 +108,7 @@ def main():
     q = crear_matriu_2d(5, 5)
     inicialitzar_matriu(q, "-")
 
-    q = crear_quadrat(19, "-")
+    q = crear_quadrat(s, "-")
     diagonal = posar_en_diagonal(q, "*")
     imprimir_matriu(diagonal)
     
