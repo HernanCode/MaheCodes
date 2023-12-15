@@ -44,7 +44,6 @@ def cercar_els_que_acaben_en(m,e):
     return n_ultim
 
 # Ex7
-
 def senar(s):
     senar = False
     while not senar:
