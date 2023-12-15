@@ -44,6 +44,17 @@ def cercar_els_que_acaben_en(m,e):
     return n_ultim
 
 # Ex7
+
+def senar(s):
+    senar = False
+    while not senar:
+        if s % 2 != 0:
+            senar = True
+        else:
+            print("ERROR: El nombre es parell ")
+            s = utils.secure_int("Introdueix un nombre imparell (10-20): ", 10, 20)
+    return s
+
 def crear_quadrat(s,c):
     '''Crea una matriu quadrada de mida s x s inicialitzada amb el caràcter c.'''
     quadrat = [[c for j in range(s)] for i in range(s)]
@@ -53,9 +64,7 @@ def crear_quadrat(s,c):
 def inicialitzar_matriu(q,c):
     '''Inicialitza tots els elements de la matriu amb el caràcter c.'''
     matriu = [[c for j in i] for i in q]
-    for row in matriu:
-        print(*row)
-
+    return matriu
 # Ex9
 def diagonal(q,c):
     '''Posa el caràcter c a les diagonals de la matriu quadrada.'''
@@ -81,38 +90,52 @@ def dibuixar_creu(q,c):
 
 # Funció principal
 def main():
+    # Ex1
+    print("==== Exercici 1  =====")
     n1 = utils.secure_int("Introdueix el primer nombre: ")
     n2 = utils.secure_int("Introdueix el segon nombre: ")
     m = crear_matriu_2d(n1, n2)
     
+    # EX2
+    print("==== Exercici 2  =====")
     imprimir_matriu(m)
-    
+    #EX3
+    print("==== Exercici 3  =====")
     n = utils.secure_int("Introdueix un nombre (1-10): ", 1, 10)
-    print(llistar_multiples(m, n))
-    
+    print(f"Multiples de {n}: ", llistar_multiples(m, n))
+    #EX4
+    print("==== Exercici 4  =====")
     print(fer_llista_unica(m))
-    
+    #EX5
+    print("==== Exercici 5  =====")
     print(buscar_min_i_max(m))
-
+    # EX6
+    print("==== Exercici 6  =====")
     e = utils.secure_int("Introdueix un nombre (0-9): ", 0, 9)
     print(cercar_els_que_acaben_en(m, e))
     
+    # EX7
+    print("==== Exercici 7  =====")
     # Comprovem que sigui senar
-    senar = False
-    while not senar:
-        s = utils.secure_int("Introdueix un nombre (10-20): ", 10, 20)
-        if s % 2 != 0:
-            senar = True
-    crear_quadrat(s, "*")
-
-    q = crear_matriu_2d(5, 5)
-    inicialitzar_matriu(q, "-")
-
-    q = crear_quadrat(s, "-")
-    diagonal = posar_en_diagonal(q, "*")
-    imprimir_matriu(diagonal)
+    s = senar(utils.secure_int("Introdueix un nombre (10-20): ",10,20))
+    q = crear_quadrat(s, "*")
+    imprimir_matriu(q)
+    print(("\n"*3))
     
-    imprimir_matriu(dibuixar_creu(diagonal, "|"))
+    # EX8
+    print("==== Exercici 8  =====")
+    m = inicialitzar_matriu(q, "-")
+    imprimir_matriu(m)
+    
+    # EX9
+    print("==== Exercici 9  =====")
+    diagonals = posar_en_diagonal(m, "*")
+    imprimir_matriu(diagonals)
+    
+    # EX10
+    print("==== Exercici 10  =====")
+    creu = dibuixar_creu(diagonals,"|")
+    imprimir_matriu(creu)
     
 if __name__ == "__main__":
     main()
