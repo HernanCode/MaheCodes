@@ -9,8 +9,7 @@ def vowel_count(word):
 
 def main():
     word = sys.argv[1]
-    if __name__ == "__main__":
-        num_vowels = vowel_count(word)
-        print(num_vowels)
+    num_vowels = vowel_count(word) if word.isalpha() else None
+    print("Vocals:",num_vowels)
 if __name__ == "__main__":
     main()
