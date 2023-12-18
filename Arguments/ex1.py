@@ -11,5 +11,6 @@ def main():
     word = sys.argv[1]
     num_vowels = vowel_count(word) if word.isalpha() else None
     print("Vocals:",num_vowels)
+    
 if __name__ == "__main__":
     main()
