@@ -6,14 +6,25 @@
 import sys 
 
 
-def check_args(v1,v2):
-    pass
+import sys
 
+def check_params(char,num):
+    is_letter = char.isalpha()
+    is_num = num.isnumeric()
+    
+    if is_letter and is_num:
+        print(char*int(num))
+    else:
+        print(f"El valor {char} no es una letra") if not is_letter else ""
+        print(f"El valor {num} no es un numero") if not is_num else ""
+        
+    
 def main():
-    word = sys.argv[1]
-    nums = sys.argv[2]
+    char = sys.argv[1]
+    num = sys.argv[2]
+    check_params(char,num)
     
-    
+
 if __name__ == "__main__":  
     main()
 
